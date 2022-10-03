@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using Cinemachine;
 
@@ -17,7 +16,7 @@ public sealed class Movement : MonoBehaviour
 
     [HideInInspector] public Animator ani;
     PlayerInput input;
-    LayerMask ground, plr;
+    [HideInInspector] public LayerMask ground, plr;
     Rigidbody rb;
     // Player stats;
 

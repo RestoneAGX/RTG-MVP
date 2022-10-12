@@ -15,9 +15,9 @@ public sealed class Movement : MonoBehaviour
     float smoothVelocity;
 
     [HideInInspector] public Animator ani;
-    PlayerInput input;
+    [HideInInspector] public PlayerInput input;
     [HideInInspector] public LayerMask ground, plr;
-    Rigidbody rb;
+    [HideInInspector] public Rigidbody rb;
     // Player stats;
 
     private void Start()
@@ -79,9 +79,10 @@ public sealed class Movement : MonoBehaviour
         // if (dashCooldown.isRunning || stats.stopped) return; // NOTE: Remove stats.stopped if animation is for this
 
         dashCooldown.Start();
-        
-        rb.AddForce(transform.TransformDirection(MvIn) * dashForce, ForceMode.Impulse);
+        Force(dashForce);        
     }
+
+    public void Force(float dashForce) => rb.AddForce(transform.TransformDirection(MvIn) * dashForce, ForceMode.Impulse);
 
     private void inputs()
     {

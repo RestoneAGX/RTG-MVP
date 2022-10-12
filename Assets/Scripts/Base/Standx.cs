@@ -6,13 +6,26 @@ public abstract class Standx : MonoBehaviour
 	internal Stats stats;
 	
 	#region Stand On
-	public abstract void Atk();
-	public abstract void SpAtk();
-	public abstract void Strong();
-	public abstract void Heavy();
-	public abstract void A1();
-	public abstract void A2();
-	public abstract void A3();
+	public abstract void Neutral_Atk();
+	public abstract void Forward_Atk();
+	public abstract void Side_Atk();
+	public abstract void Back_Atk();
+
+	public abstract void Neutral_SpAtk();
+	public abstract void Forward_SpAtk();
+	public abstract void Side_SpAtk();
+	public abstract void Back_SpAtk();
+
+	public abstract void Aerial_Neutral_Atk();
+	public abstract void Aerial_Forward_Atk();
+	public abstract void Aerial_Side_Atk();
+	public abstract void Aerial_Back_Atk();
+
+	public abstract void Aerial_Neutral_SpAtk();
+	public abstract void Aerial_Foward_SpAtk();
+	public abstract void Aerial_Side_SpAtk();
+	public abstract void Aerial_Back_SpAtk();
+
 	public abstract void Ult();
 	#endregion
 

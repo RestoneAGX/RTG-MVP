@@ -4,24 +4,22 @@ using UnityEngine;
 public class Projectile : Stats
 {
 	public Hitbox box;
-	public Timer lifeTime;
+	public float lifeTime;
 	public float speed;
 	internal Rigidbody rb;
 	
 	internal override void Start()
 	{
 		base.Start();
-		lifeTime.Start();
+		Destroy(gameObject, lifeTime);
 
 		rb = GetComponent<Rigidbody>();
 	}
 	
 	internal virtual void FixedUpdate()
 	{
-		lifeTime.UpdateTimer();
 		if (stopped) return;
 		
-		else if (lifeTime.complete)	Destroy(gameObject);
 		else if (box.parent != null) Atk();
 		
 		Move();

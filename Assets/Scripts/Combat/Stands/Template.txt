@@ -1,0 +1,21 @@
+    public override void Neutral_Atk() => 
+    public override void Forward_Atk() =>
+    public override void Side_Atk() =>
+    public override void Back_Atk() =>
+
+    public override void Neutral_SpAtk() =>
+    public override void Forward_SpAtk() =>
+    public override void Side_SpAtk() =>
+    public override void Back_SpAtk() =>
+
+    public override void Aerial_Neutral_Atk() =>
+	public override void Aerial_Forward_Atk() =>
+	public override void Aerial_Side_Atk() =>
+	public override void Aerial_Back_Atk() =>
+
+	public override void Aerial_Neutral_SpAtk() =>
+	public override void Aerial_Foward_SpAtk() =>
+	public override void Aerial_Side_SpAtk() =>
+	public override void Aerial_Back_SpAtk() =>
+
+    public override void Ult() =>

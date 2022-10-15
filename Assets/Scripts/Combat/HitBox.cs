@@ -25,6 +25,21 @@ public sealed class Hitbox
         }
     }
 
+    public void Atk(Func<Collider> act)
+    {
+        Collider[] plrs = Physics.OverlapSphere(point.position, range, opponent);
+        foreach (Collider other in plrs)
+        {
+            if (other.transform == parent) continue;
+
+            // if (other.GetComponent<Rigidbody>())
+               other.GetComponent<Rigidbody>().AddRelativeForce(angle, ForceMode.Impulse);
+               act(other);
+
+            other.GetComponent<Stats>().TakeDamage(damage);
+        }
+    }
+
     public void Atk(float multiplier)
     {
         Collider[] plrs = Physics.OverlapSphere(point.position, range, opponent);

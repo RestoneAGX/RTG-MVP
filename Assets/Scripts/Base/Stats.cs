@@ -41,6 +41,7 @@ public class Stats : MonoBehaviour
 
                 case 1: // Store damage
                     storedDmg += newDamage;
+                    if (storedDmg > 100) storedDmg = 100;
                     break;
 
                 case 2: // Love Train

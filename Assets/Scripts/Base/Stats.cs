@@ -48,7 +48,7 @@ public class Stats : MonoBehaviour
                     Hitbox newHit = new Hitbox(); // Create hitbox to attack all nearby
                     newHit.range = 5f;
                     newHit.damage = damage;
-                    newHit.Atk();
+                    newHit.Atk(); // NOTE: Maybe add a reflector
                     break;
             }
         else

@@ -1,16 +1,15 @@
+using System;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public sealed class Hitbox
 {
     public Vector3 angle;
-    public float range;
-    public float damage;
-    public Transform point;
-    public Transform parent;
-    public LayerMask opponent;
     public Color boxColor;
-
+    public LayerMask opponent;
+    public float range, damage;
+    public Transform point;
+    [HideInInspector] public Transform parent;
     public void Atk()
     {
         Collider[] plrs = Physics.OverlapSphere(point.position, range, opponent);
@@ -25,18 +24,15 @@ public sealed class Hitbox
         }
     }
 
-    public void Atk(Func<Collider> act)
+    public void Atk(Action<Collider> act)
     {
         Collider[] plrs = Physics.OverlapSphere(point.position, range, opponent);
         foreach (Collider other in plrs)
         {
             if (other.transform == parent) continue;
 
-            // if (other.GetComponent<Rigidbody>())
-               other.GetComponent<Rigidbody>().AddRelativeForce(angle, ForceMode.Impulse);
-               act(other);
-
             other.GetComponent<Stats>().TakeDamage(damage);
+            act(other);
         }
     }
 
@@ -54,12 +50,12 @@ public sealed class Hitbox
         }
     }
 
-    public bool AtkProjectile(float multiplier)
+    public bool AtkProjectile(float multiplier, Transform self)
     {
         Collider[] plrs = Physics.OverlapSphere(point.position, range, opponent);
         foreach (Collider other in plrs)
         {
-            if (other.transform == parent) continue;
+            if (other.transform == parent || other.transform == self) continue;
 
             other.GetComponent<Stats>().TakeDamage(multiplier + damage);
 
@@ -69,7 +65,6 @@ public sealed class Hitbox
 
         return false;
     }
-
 
     ///<Summary>
     /// Calls the attribtue system indirectly
@@ -88,14 +83,7 @@ public sealed class Hitbox
             other.GetComponent<StandAttribute>().StartDebuff(AttributeType, AttributeDuration);
         }
     }
-
-    ///<Summary>
-    /// Calls the attribtue system indirectly
-    /// 0 is Time Stop
-    /// 1 is Poison/bleed/freeze (Damage over time)
-    /// 2 is Stun
-    /// 3 is Tripping/Stun with animation
-    ///</Summary>
+    
     public void Effect(int attributeType, float attributeDuration, float attributeDamage)
     {
         Collider[] plrs = Physics.OverlapSphere(point.position, range, opponent);

@@ -5,9 +5,7 @@ public sealed class TheCure : Standx
     public Hitbox atk, wind_box;
     public Transform firingPoint;
     public GameObject wind_slash, reflector;
-
     public float dashForce, jumpForce, push_force;
-
     Movement movement;
 
     public override void Neutral_Atk() => atk.Atk(stats.damageMultiplier);
@@ -48,6 +46,8 @@ public sealed class TheCure : Standx
 	{
         base.initialize();
         movement = parent.GetComponent<Movement>();
+        wind_box.parent = parent;
+        atk.parent = parent;
         stats.blockType = 1;
 	}
 

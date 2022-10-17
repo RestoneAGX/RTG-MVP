@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Combat : MonoBehaviour
 {
-	[Header("Stand")] public StandBody stand;
+	[Header("Stand")] public Standx stand;
 	public bool standOn;
 	public int recovery;
 	public Timer ultTimer; // TODO: Set a universal value for the max for this
@@ -53,14 +53,16 @@ public class Combat : MonoBehaviour
 	public void Attack(Vector3 mvIn, string output){
 		if (stats.stopped) return;
 
-		if (mvIn.x > 0) // TODO: Change Zero to activation threashold
-			output = "Forward " + output;
-		else if (mvIn.x < 1)
-			output = "Back " + output;
-		else if (mvIn.z != 0)
-			output = "Side " + output;
+		if (mvIn.z > 0) // TODO: Change Zero to activation threashold
+			output = "Forward_" + output;
+		else if (mvIn.z < 0)
+			output = "Back_" + output;
+		else if (mvIn.x != 0)
+			output = "Side_" + output;
+		else
+			output = "Neutral_" + output;
 
-		ani.SetTrigger(output);
+		// ani.SetTrigger(output);
 		if (standOn) stand.ani.SetTrigger(output);
 	}
 
@@ -69,7 +71,7 @@ public class Combat : MonoBehaviour
 	{
 		if(ultTimer.isRunning || stats.stopped) return;
 		
-		if (standOn) stand.stand.Ult();
+		if (standOn) stand.Ult();
 		else ani.SetTrigger("Ult"); //Fill in until we add a proper ultimate technique
 	}
 

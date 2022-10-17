@@ -1,9 +1,11 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public abstract class Standx : MonoBehaviour
 {
 	internal Transform parent;
 	internal Stats stats;
+	public Animator ani;
 	
 	#region Stand On
 	public abstract void Neutral_Atk();
@@ -29,26 +31,25 @@ public abstract class Standx : MonoBehaviour
 	public abstract void Ult();
 	#endregion
 
-	public virtual void ApplyAttributes(){}
-	
-	#region Maintenence
-	
 	public virtual void initialize()
 	{
 		// NOTE: Set Player Animator Controller to Preset Stand Ani-Controller for simplicity when working with animations
 		parent = transform.parent;
 		stats = parent.GetComponent<Stats>();
+		ani = GetComponent<Animator>();
 	}
 
-	public virtual void despawn(){
+	public void Spawn(Transform point) => Instantiate(gameObject, point.position, point.rotation, point);
+
+	public virtual void Despawn(){
 		// NOTE: Reset Player Animator back to normal
 		Destroy(gameObject);
 	}
 
 	public abstract void DrawBoxes();
-	#endregion
+	public virtual void ApplyAttributes(){}
 	
-	void Awake() => initialize();	
-	
+	void Awake() => initialize();
+	void Update() => ApplyAttributes();
 	void OnDrawGizmosSelected() => DrawBoxes();
 }

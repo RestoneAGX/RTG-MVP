@@ -27,7 +27,7 @@ public class Projectile : Stats
 	
 	public virtual void Atk()
 	{
-		if(box.AtkProjectile(damageMultiplier))	Destroy(gameObject);
+		if(box.AtkProjectile(damageMultiplier, transform))	Destroy(gameObject);
 	}
 	
 	public virtual void Move() => rb.AddRelativeForce(Vector3.forward * speed, ForceMode.Impulse);

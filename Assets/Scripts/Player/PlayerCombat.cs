@@ -10,10 +10,10 @@ public sealed class PlayerCombat : Combat{
 	public Dictionary<int, bool> atk_dict;
 
 	internal override void m_Start(){
-		ani.SetBool("Standless", !standOn);
+		ani.SetBool("Standless", stand != null);
 		movement = GetComponent<Movement>();
 		input = InputManager.input;
-		setup_hashes();
+		// setup_hashes(); // TODO: turn this on
 		Inputs();
 	}
 
@@ -57,25 +57,25 @@ public sealed class PlayerCombat : Combat{
 	}
 
 	private void setup_hashes(){
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Neutral Atk"), true);
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Forward Atk"), true);
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Side Atk"), true);
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Back Atk"), true);
+		atk_dict.Add(Animator.StringToHash("Neutral Atk"), true);
+		atk_dict.Add(Animator.StringToHash("Forward Atk"), true);
+		atk_dict.Add(Animator.StringToHash("Side Atk"), true);
+		atk_dict.Add(Animator.StringToHash("Back Atk"), true);
 
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Neutral SpAtk"), true);
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Forward SpAtk"), true);
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Side SpAtk"), true);
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Back SpAtk"), true);
+		atk_dict.Add(Animator.StringToHash("Neutral SpAtk"), true);
+		atk_dict.Add(Animator.StringToHash("Forward SpAtk"), true);
+		atk_dict.Add(Animator.StringToHash("Side SpAtk"), true);
+		atk_dict.Add(Animator.StringToHash("Back SpAtk"), true);
 
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Aerial Neutral Atk"), true);
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Aerial Forward Atk"), true);
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Aerial Side Atk"), true);
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Aerial Back Atk"), true);
+		atk_dict.Add(Animator.StringToHash("Aerial Neutral Atk"), true);
+		atk_dict.Add(Animator.StringToHash("Aerial Forward Atk"), true);
+		atk_dict.Add(Animator.StringToHash("Aerial Side Atk"), true);
+		atk_dict.Add(Animator.StringToHash("Aerial Back Atk"), true);
 
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Aerial Neutral SpAtk"), true);
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Aerial Forward SpAtk"), true);
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Aerial Side SpAtk"), true);
-		atk_dict.Add(UnityEngine.Animator.StringToHash("Aerial Back SpAtk"), true);
+		atk_dict.Add(Animator.StringToHash("Aerial Neutral SpAtk"), true);
+		atk_dict.Add(Animator.StringToHash("Aerial Forward SpAtk"), true);
+		atk_dict.Add(Animator.StringToHash("Aerial Side SpAtk"), true);
+		atk_dict.Add(Animator.StringToHash("Aerial Back SpAtk"), true);
 		// atk_dict.Add(UnityEngine.Animator.StringToHash("Parry-Grab"), true); // TODO: Parry-Grab String_Hash
 	}
 }

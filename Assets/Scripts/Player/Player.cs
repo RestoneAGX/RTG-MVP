@@ -6,13 +6,13 @@ public sealed class Player : Stats
 	public float xp, maxXp;
 	public int level, skillPoints;
 	// [Header("Death")] public GameObject deathMenu; //reimplement for online if nesseccary
-	public PlayerHUD HUD;
+	// public PlayerHUD HUD;
     internal Animator ani; // TODO: Put this in base during a refactor
 
 	internal override void Start() {
 		base.Start();
         ani = GetComponentInChildren<Animator>();
-		HUD.SetMaxHealth((int)maxHp);
+		// HUD.SetMaxHealth((int)maxHp);
 	}
 
 	public void AddXp(float newXp)
@@ -31,7 +31,7 @@ public sealed class Player : Stats
 	public override void TakeDamage(float damage){
 		base.TakeDamage(damage);
         ani.SetTrigger("Hurt"); // TODO: Place this in side the base TakeDamage at the appropriate place\
-		HUD.SetHealth((int) hp);
+		// HUD.SetHealth((int) hp);
 	}
 
 	public override void Die() => FindObjectOfType<DeathMenu>().Evaluate();
@@ -41,6 +41,6 @@ public sealed class Player : Stats
 		hp = maxHp;
 		shieldHp = maxShieldHp;
 		shieldRecovery.ResetTimer();
-		HUD.SetMaxHealth((int) maxHp);
+		// HUD.SetMaxHealth((int) maxHp);
 	}
 }

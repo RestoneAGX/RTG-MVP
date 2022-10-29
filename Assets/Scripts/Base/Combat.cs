@@ -1,6 +1,6 @@
-using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Stats))]
 public class Combat : MonoBehaviour
 {
 	[Header("Stand")] public Standx stand;

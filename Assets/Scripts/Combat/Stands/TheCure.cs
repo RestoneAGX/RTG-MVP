@@ -37,7 +37,8 @@ public sealed class TheCure : Standx
     // NOTE: Call Neutral_SpAtk() to do the damage and call this function to add the jump
 	public override void Aerial_Neutral_SpAtk() => movement.rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 	public override void Aerial_Foward_SpAtk() => movement.rb.AddForceAtPosition(parent.forward * push_force, firingPoint.position, ForceMode.Impulse); //NOTE: might want to change this up so, it's a box that launches anyone infront of it back
-	public override void Aerial_Side_SpAtk() => reflector.SetActive(true); // NOTE: In the animation, deactivate the reflector's gameObject
+	public override void Aerial_Side_SpAtk() => reflector.SetActive(true);
+    public void Closing_Side_SpAtk() => reflector.SetActive(false);
 	public override void Aerial_Back_SpAtk() => wind_box.Atk(stats.damageMultiplier);
 
     public override void Ult() {}

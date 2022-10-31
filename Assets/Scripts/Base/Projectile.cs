@@ -25,9 +25,11 @@ public class Projectile : Stats
 		Move();
 	}
 	
-	public virtual void Atk(){ if(box.AtkProjectile(damageMultiplier, transform))	Destroy(gameObject); }
+	public virtual void Atk() => box.AtkProjectile(damageMultiplier, transform);
 	
 	public virtual void Move() => rb.AddRelativeForce(Vector3.forward * speed, ForceMode.Impulse);
+
+	public virtual void Spawn(Transform point, Transform parent) => Instantiate(gameObject, point.position, point.rotation ).GetComponent<Projectile>().box.parent = parent;
 
 	internal virtual void DrawBoxes() => box.DrawHitBox();
 

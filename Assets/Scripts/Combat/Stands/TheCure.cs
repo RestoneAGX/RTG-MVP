@@ -4,7 +4,7 @@ public sealed class TheCure : Standx
 {
     public Hitbox atk, wind_box;
     public Transform firingPoint;
-    public GameObject wind_slash;
+    public Projectile wind_slash;
     public float dashForce, jumpForce, push_force;
     Movement movement;
 
@@ -12,7 +12,7 @@ public sealed class TheCure : Standx
 
     public override void Forward_Atk() => atk.Atk(stats.damageMultiplier);
 
-    public override void Side_Atk() => Instantiate(wind_slash, firingPoint.position, firingPoint.rotation);
+    public override void Side_Atk() => wind_slash.Spawn(firingPoint, parent);
 
     public override void Back_Atk() => atk.Atk(stats.damageMultiplier);
 

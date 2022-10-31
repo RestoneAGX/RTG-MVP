@@ -747,64 +747,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 57446f180c3e7cd4092fc10aa2b11071, type: 3}
   m_PrefabInstance: {fileID: 99069675}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &599343939
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 599343942}
-  - component: {fileID: 599343941}
-  - component: {fileID: 599343940}
-  m_Layer: 6
-  m_Name: Reflector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &599343940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599343939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a04565622714b534299fe8b929effdd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!135 &599343941
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599343939}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 1.55}
---- !u!4 &599343942
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599343939}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1311112130}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,7 +911,7 @@ MonoBehaviour:
     point: {fileID: 816858110}
     parent: {fileID: 0}
   firingPoint: {fileID: 54926907}
-  wind_slash: {fileID: 7146788248822571197, guid: 692059eb2c92fe44aab18fc69579d595, type: 3}
+  wind_slash: {fileID: 7146788248822571186, guid: 692059eb2c92fe44aab18fc69579d595, type: 3}
   dashForce: 10
   jumpForce: 1
   push_force: 10
@@ -1317,7 +1259,7 @@ MonoBehaviour:
     point: {fileID: 1311112130}
     parent: {fileID: 0}
   firingPoint: {fileID: 1185501357}
-  wind_slash: {fileID: 7146788248822571197, guid: 692059eb2c92fe44aab18fc69579d595, type: 3}
+  wind_slash: {fileID: 7146788248822571186, guid: 692059eb2c92fe44aab18fc69579d595, type: 3}
   dashForce: 10
   jumpForce: 1
   push_force: 10
@@ -1334,7 +1276,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1185501357}
-  - {fileID: 599343942}
   m_Father: {fileID: 243148351}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

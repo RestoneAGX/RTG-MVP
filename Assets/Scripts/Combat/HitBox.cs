@@ -10,6 +10,7 @@ public sealed class Hitbox
     public float range, damage;
     public Transform point;
     [HideInInspector] public Transform parent;
+
     public void Atk()
     {
         Collider[] plrs = Physics.OverlapSphere(point.position, range, opponent);
@@ -50,20 +51,19 @@ public sealed class Hitbox
         }
     }
 
-    public bool AtkProjectile(float multiplier, Transform self)
+    public void AtkProjectile(float multiplier, Transform self)
     {
         Collider[] plrs = Physics.OverlapSphere(point.position, range, opponent);
         foreach (Collider other in plrs)
         {
             if (other.transform == parent || other.transform == self) continue;
 
+            Debug.Log(other.name);
             other.GetComponent<Stats>().TakeDamage(multiplier + damage);
-
-            if (other.GetComponent<Rigidbody>()) other.GetComponent<Rigidbody>().AddRelativeForce(angle, ForceMode.Impulse);
-            return true;
+            other.GetComponent<Rigidbody>().AddRelativeForce(angle, ForceMode.Impulse);
+            UnityEngine.Object.Destroy(self.gameObject);
         }
 
-        return false;
     }
 
     ///<Summary>

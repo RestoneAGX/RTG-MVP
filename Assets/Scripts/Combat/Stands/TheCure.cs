@@ -4,7 +4,7 @@ public sealed class TheCure : Standx
 {
     public Hitbox atk, wind_box;
     public Transform firingPoint;
-    public GameObject wind_slash, reflector;
+    public GameObject wind_slash;
     public float dashForce, jumpForce, push_force;
     Movement movement;
 
@@ -37,8 +37,13 @@ public sealed class TheCure : Standx
     // NOTE: Call Neutral_SpAtk() to do the damage and call this function to add the jump
 	public override void Aerial_Neutral_SpAtk() => movement.rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 	public override void Aerial_Foward_SpAtk() => movement.rb.AddForceAtPosition(parent.forward * push_force, firingPoint.position, ForceMode.Impulse); //NOTE: might want to change this up so, it's a box that launches anyone infront of it back
-	public override void Aerial_Side_SpAtk() => reflector.SetActive(true);
-    public void Closing_Side_SpAtk() => reflector.SetActive(false);
+	public override void Aerial_Side_SpAtk() => wind_box.Atk((Collider hit) =>
+        {
+            Projectile projectile = hit.GetComponent<Projectile>();
+            projectile.box.parent = parent;
+            projectile.rb.velocity = new Vector3( projectile.rb.velocity.x, projectile.rb.velocity.y, -projectile.rb.velocity.z);
+            hit.transform.Rotate(Vector3.up * 180, Space.Self);
+        });
 	public override void Aerial_Back_SpAtk() => wind_box.Atk(stats.damageMultiplier);
 
     public override void Ult() {}

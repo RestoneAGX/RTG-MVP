@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7146788248822571185}
   - component: {fileID: 7146788248822571184}
   - component: {fileID: 7146788248822571187}
-  - component: {fileID: -2479063236732786403}
   - component: {fileID: 7146788248822571186}
+  - component: {fileID: 8688964691601336495}
   m_Layer: 6
   m_Name: Wind Shot
   m_TagString: Player
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 77a6cfca889edfc46958057a7a0896ad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -102,19 +102,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &-2479063236732786403
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7146788248822571197}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7146788248822571186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,3 +144,16 @@ MonoBehaviour:
     parent: {fileID: 0}
   lifeTime: 5
   speed: 2
+--- !u!65 &8688964691601336495
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7146788248822571197}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

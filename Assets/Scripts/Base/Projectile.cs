@@ -6,7 +6,7 @@ public class Projectile : Stats
 	public Hitbox box;
 	public float lifeTime;
 	public float speed;
-	internal Rigidbody rb;
+	[HideInInspector] public Rigidbody rb;
 	
 	internal override void Start()
 	{
@@ -25,10 +25,7 @@ public class Projectile : Stats
 		Move();
 	}
 	
-	public virtual void Atk()
-	{
-		if(box.AtkProjectile(damageMultiplier, transform))	Destroy(gameObject);
-	}
+	public virtual void Atk(){ if(box.AtkProjectile(damageMultiplier, transform))	Destroy(gameObject); }
 	
 	public virtual void Move() => rb.AddRelativeForce(Vector3.forward * speed, ForceMode.Impulse);
 

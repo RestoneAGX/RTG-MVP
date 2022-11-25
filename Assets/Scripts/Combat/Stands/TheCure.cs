@@ -8,13 +8,15 @@ public sealed class TheCure : Standx
     public float dashForce, jumpForce, push_force;
     Movement movement;
 
+    public void Windbar_Cost(float cost) => stats.storedDmg -= cost;
+
     public override void Neutral_Atk() => atk.Atk(stats.damageMultiplier);
 
     public override void Forward_Atk() => atk.Atk(stats.damageMultiplier);
 
     public override void Side_Atk() => wind_slash.Spawn(firingPoint, parent);
 
-    public override void Back_Atk() => atk.Atk(stats.damageMultiplier);
+    public override void Back_Atk() => atk.Atk(-15 - stats.damageMultiplier);
 
     public override void Neutral_SpAtk() => wind_box.Atk((Collider hit) => hit.GetComponent<Rigidbody>().AddExplosionForce(wind_box.damage, wind_box.point.position, wind_box.range, 1.5f, ForceMode.Impulse));
 
@@ -29,7 +31,7 @@ public sealed class TheCure : Standx
     }
     public override void Back_SpAtk() => wind_box.Atk(-10);
 
-    public override void Aerial_Neutral_Atk() => atk.Atk(stats.damageMultiplier);
+    public override void Aerial_Neutral_Atk() => atk.Atk(stats.damageMultiplier); // NOTE: Maybe add wind particles
 	public override void Aerial_Forward_Atk() {} // Bunny Jump; Don't know how that's going 
 	public override void Aerial_Side_Atk() {} //Figure out how to do this
 	public override void Aerial_Back_Atk() => atk.Atk(stats.damageMultiplier);

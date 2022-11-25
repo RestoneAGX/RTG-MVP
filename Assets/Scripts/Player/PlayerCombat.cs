@@ -17,9 +17,15 @@ public sealed class PlayerCombat : Combat{
 		Inputs();
 	}
 
-	public void Atk() => Attack(movement.MvIn, "Atk");
+	public void Atk() {
+		movement.MvIn.y = (Physics.CheckSphere(transform.position + Vector3.down, .25f, movement.ground)) ? 0 : 1;
+		Attack(movement.MvIn, "Atk");
+	}
 
-	public void SpAtk() => Attack(movement.MvIn, "SpAtk");
+	public void SpAtk() {
+		movement.MvIn.y = (Physics.CheckSphere(transform.position + Vector3.down, .25f, movement.ground)) ? 0 : 1;
+		Attack(movement.MvIn, "SpAtk");
+	}
 
 	public void Block() {
 		if (stats.blocking){

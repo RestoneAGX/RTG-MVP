@@ -53,6 +53,8 @@ public class Combat : MonoBehaviour
 	public void Attack(Vector3 mvIn, string output){
 		if (stats.stopped) return;
 
+		if (mvIn.y == 1) output = "Aerial_" + output;
+
 		if (mvIn.z > 0) // TODO: Change Zero to activation threashold
 			output = "Forward_" + output;
 		else if (mvIn.z < 0)

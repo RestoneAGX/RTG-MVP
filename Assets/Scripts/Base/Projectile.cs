@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile : Stats
 {
-	public Hitbox box;
+	public HitBox box;
 	public float lifeTime;
 	public float speed;
 	[HideInInspector] public Rigidbody rb;
@@ -25,13 +25,16 @@ public class Projectile : Stats
 		Move();
 	}
 	
-	public virtual void Atk() => box.AtkProjectile(damageMultiplier, transform);
-	
+	public virtual void Atk() { if (Hit.Projectile_Atk(box, transform)) Destroy(gameObject); }
 	public virtual void Move() => rb.AddRelativeForce(Vector3.forward * speed, ForceMode.Impulse);
 
-	public virtual void Spawn(Transform point, Transform parent) => Instantiate(gameObject, point.position, point.rotation ).GetComponent<Projectile>().box.parent = parent;
+	public virtual Projectile Spawn(Transform point, Transform parent) {
+        Projectile a = Instantiate(gameObject, point.position, point.rotation ).GetComponent<Projectile>();
+        a.box.parent = parent;
+        return a;
+    }
 
-	internal virtual void DrawBoxes() => box.DrawHitBox();
+	internal virtual void DrawBoxes() => Hit.DrawHitBox(box);
 
 	void OnDrawGizmosSelected() => DrawBoxes();
 }

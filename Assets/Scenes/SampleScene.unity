@@ -890,24 +890,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ani: {fileID: 816858112}
   atk:
-    angle: {x: 0, y: 0, z: 0}
-    boxColor: {r: 1, g: 0.7877358, b: 0.7877358, a: 1}
-    opponent:
-      serializedVersion: 2
-      m_Bits: 64
     range: 1
     damage: 5
-    point: {fileID: 816858110}
-    parent: {fileID: 0}
-  wind_box:
     angle: {x: 0, y: 0, z: 0}
-    boxColor: {r: 0, g: 0.94190407, b: 1, a: 1}
+    point: {fileID: 816858110}
+    color: {r: 0, g: 0, b: 0, a: 0}
     opponent:
       serializedVersion: 2
       m_Bits: 64
-    range: 5
+    parent: {fileID: 0}
+  wind_box:
+    range: 5.26
     damage: 3
+    angle: {x: 0, y: 0, z: 0}
     point: {fileID: 816858110}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    opponent:
+      serializedVersion: 2
+      m_Bits: 64
     parent: {fileID: 0}
   firingPoint: {fileID: 54926907}
   wind_slash: {fileID: 7146788248822571186, guid: 692059eb2c92fe44aab18fc69579d595, type: 3}
@@ -1238,24 +1238,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ani: {fileID: 1311112131}
   atk:
-    angle: {x: 0, y: 0, z: 0}
-    boxColor: {r: 1, g: 0.7877358, b: 0.7877358, a: 1}
-    opponent:
-      serializedVersion: 2
-      m_Bits: 64
     range: 1
     damage: 5
-    point: {fileID: 1311112130}
-    parent: {fileID: 0}
-  wind_box:
     angle: {x: 0, y: 0, z: 0}
-    boxColor: {r: 0.8349056, g: 1, b: 0.9838868, a: 1}
+    point: {fileID: 1311112130}
+    color: {r: 0, g: 0, b: 0, a: 0}
     opponent:
       serializedVersion: 2
       m_Bits: 64
+    parent: {fileID: 0}
+  wind_box:
     range: 5
     damage: 3
+    angle: {x: 0, y: 0, z: 0}
     point: {fileID: 1311112130}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    opponent:
+      serializedVersion: 2
+      m_Bits: 64
     parent: {fileID: 0}
   firingPoint: {fileID: 1185501357}
   wind_slash: {fileID: 7146788248822571186, guid: 692059eb2c92fe44aab18fc69579d595, type: 3}
@@ -1648,6 +1648,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1185501357}
     m_Modifications:
+    - target: {fileID: 7146788248822571186, guid: 692059eb2c92fe44aab18fc69579d595, type: 3}
+      propertyPath: box.color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146788248822571186, guid: 692059eb2c92fe44aab18fc69579d595, type: 3}
+      propertyPath: box.color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146788248822571186, guid: 692059eb2c92fe44aab18fc69579d595, type: 3}
+      propertyPath: box.color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146788248822571186, guid: 692059eb2c92fe44aab18fc69579d595, type: 3}
+      propertyPath: box.color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7146788248822571197, guid: 692059eb2c92fe44aab18fc69579d595, type: 3}
       propertyPath: m_Name
       value: Wind Shot

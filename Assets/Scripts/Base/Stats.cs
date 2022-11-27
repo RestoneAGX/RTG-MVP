@@ -45,10 +45,7 @@ public class Stats : MonoBehaviour
                     break;
 
                 case 2: // Love Train
-                    Hitbox newHit = new Hitbox(); // Create hitbox to attack all nearby
-                    newHit.range = 5f;
-                    newHit.damage = damage;
-                    newHit.Atk(); // NOTE: Maybe add a reflector
+                    HitBox newHit = new HitBox(5f, damage, transform); // Creates and uses the New Hitbox to attack all nearby enemies
                     break;
             }
         else

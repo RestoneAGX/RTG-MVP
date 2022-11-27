@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: fd2a6332815766b07be89bafad40f27b
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: -5807268236101093039
+    second: starplat.qc_skeleton|a_stande
+  - first:
+      74: 6587042776150513566
+    second: starplat.qc_skeleton|a_standn
+  - first:
+      74: -543108657362188203
+    second: starplat.qc_skeleton|a_standne
+  - first:
+      74: -6941403985897981208
+    second: starplat.qc_skeleton|a_standnw
+  - first:
+      74: 8433325536757188469
+    second: starplat.qc_skeleton|a_stands
+  - first:
+      74: -3882922728492629022
+    second: starplat.qc_skeleton|a_standse
+  - first:
+      74: 3634869337102186619
+    second: starplat.qc_skeleton|a_standsw
+  - first:
+      74: 4786398598078423743
+    second: starplat.qc_skeleton|a_standw
+  - first:
+      74: 3585190655595089658
+    second: starplat.qc_skeleton|barrage
+  - first:
+      74: 7420940866113127892
+    second: starplat.qc_skeleton|flick
+  - first:
+      74: -5515215072511083759
+    second: starplat.qc_skeleton|grab_idle
+  - first:
+      74: 4672502931145722875
+    second: starplat.qc_skeleton|grab_start
+  - first:
+      74: -4969537670555793119
+    second: starplat.qc_skeleton|grab_throw
+  - first:
+      74: -8978060042209147358
+    second: starplat.qc_skeleton|heavy
+  - first:
+      74: 2978994557413903773
+    second: starplat.qc_skeleton|idle
+  - first:
+      74: 6464020873073958024
+    second: starplat.qc_skeleton|ragdoll
+  - first:
+      74: 7985360964100051689
+    second: starplat.qc_skeleton|standblock
+  - first:
+      74: -7306611570385074113
+    second: starplat.qc_skeleton|standdeploy
+  - first:
+      74: 8768775843030647937
+    second: starplat.qc_skeleton|standidle
+  - first:
+      74: 8891361736653134849
+    second: starplat.qc_skeleton|starfinger
+  - first:
+      74: 91266412665472581
+    second: starplat.qc_skeleton|succ
+  - first:
+      74: 591440824077989390
+    second: starplat.qc_skeleton|timestop
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

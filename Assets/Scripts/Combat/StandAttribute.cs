@@ -1,6 +1,20 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+enum Debuff{
+    TimeStop,
+    Poison,
+    Stun,
+    Tripping
+}
+
+enum Buffs {
+    Floating,
+    Defense,
+    Damage,
+    HP,
+}
+
 public sealed class StandAttribute : MonoBehaviour
 {
     public float bleedDamage;

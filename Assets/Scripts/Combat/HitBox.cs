@@ -2,101 +2,74 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public sealed class Hitbox
-{
-    public Vector3 angle;
-    public Color boxColor;
-    public LayerMask opponent;
+public struct HitBox {
     public float range, damage;
+    public Vector3 angle;
     public Transform point;
+    public Color color;
+    public LayerMask opponent;
     [HideInInspector] public Transform parent;
 
-    public void Atk()
-    {
-        Collider[] plrs = Physics.OverlapSphere(point.position, range, opponent);
-        foreach (Collider other in plrs)
+    public HitBox(float range, float damage, Transform point){
+        this.range = range;
+        this.damage = damage;
+        this.point = point;
+        this.parent = point;
+        this.color = Color.red;
+        this.angle = Vector3.zero;
+        this.opponent = LayerMask.GetMask("Player");
+        Hit.Atk(this);
+    }
+}
+
+public static class Hit {
+    public static void Atk(HitBox box) {
+        foreach ( Collider other in Physics.OverlapSphere(box.point.position, box.range, box.opponent) )
         {
-            if (other.transform == parent) continue;
-
-            if (other.GetComponent<Rigidbody>())
-               other.GetComponent<Rigidbody>().AddRelativeForce(angle, ForceMode.Impulse);
-
-            other.GetComponent<Stats>().TakeDamage(damage);
+            if (other.transform == box.parent) continue;
+            other.GetComponent<Rigidbody>().AddRelativeForce(box.angle, ForceMode.Impulse);
+            other.GetComponent<Stats>().TakeDamage(box.damage);
         }
     }
 
-    public void Atk(Action<Collider> act)
-    {
-        Collider[] plrs = Physics.OverlapSphere(point.position, range, opponent);
-        foreach (Collider other in plrs)
+    public static void Atk(HitBox box, Action<Collider> act) {
+        foreach (Collider other in Physics.OverlapSphere(box.point.position, box.range, box.opponent))
         {
-            if (other.transform == parent) continue;
-
-            other.GetComponent<Stats>().TakeDamage(damage);
+            if (other.transform == box.parent) continue;
+            other.GetComponent<Stats>().TakeDamage(box.damage);
             act(other);
         }
     }
 
-    public void Atk(float multiplier)
-    {
-        Collider[] plrs = Physics.OverlapSphere(point.position, range, opponent);
-        foreach (Collider other in plrs)
+    public static bool Projectile_Atk(HitBox box, Transform transform) {
+        foreach ( Collider other in Physics.OverlapSphere(box.point.position, box.range, box.opponent) )
         {
-            if (other.transform == parent) continue;
-
-            if (other.GetComponent<Rigidbody>())
-                other.GetComponent<Rigidbody>().AddRelativeForce(angle, ForceMode.Impulse);
-
-            other.GetComponent<Stats>().TakeDamage(damage + multiplier);
+            if (other.transform == box.parent || other.transform == transform) continue;
+            other.GetComponent<Rigidbody>().AddRelativeForce(box.angle, ForceMode.Impulse);
+            other.GetComponent<Stats>().TakeDamage(box.damage);
+            return true;
         }
+        return false;
     }
 
-    public void AtkProjectile(float multiplier, Transform self)
+
+    public static void Effect(HitBox box, int AttributeType, float AttributeDuration)
     {
-        Collider[] plrs = Physics.OverlapSphere(point.position, range, opponent);
-        foreach (Collider other in plrs)
-        {
-            if (other.transform == parent || other.transform == self) continue;
-
-            Debug.Log(other.name);
-            other.GetComponent<Stats>().TakeDamage(multiplier + damage);
-            other.GetComponent<Rigidbody>().AddRelativeForce(angle, ForceMode.Impulse);
-            UnityEngine.Object.Destroy(self.gameObject);
-        }
-
+        foreach ( Collider other in Physics.OverlapSphere(box.point.position, box.range, box.opponent) )
+            if (other.transform != box.parent)
+                other.GetComponent<StandAttribute>().StartDebuff(AttributeType, AttributeDuration);
     }
 
-    ///<Summary>
-    /// Calls the attribtue system indirectly
-    /// 0 is Time Stop
-    /// 1 is Poison/bleed/freeze (Damage over time)
-    /// 2 is Stun
-    /// 3 is Tripping/Stun with animation
-    /// 4 is visable/tracked
-    ///</Summary>
-    public void Effect(int AttributeType, float AttributeDuration)
+    public static void Effect(HitBox box, int attributeType, float attributeDuration, float attributeDamage)
     {
-        Collider[] plrs = Physics.OverlapSphere(point.position, range, opponent);
-        foreach (Collider other in plrs)
-        {
-            if (other.transform == parent) continue;
-            other.GetComponent<StandAttribute>().StartDebuff(AttributeType, AttributeDuration);
-        }
-    }
-    
-    public void Effect(int attributeType, float attributeDuration, float attributeDamage)
-    {
-        Collider[] plrs = Physics.OverlapSphere(point.position, range, opponent);
-        foreach (Collider other in plrs)
-        {
-            if (other.transform == parent) continue;
-            other.GetComponent<StandAttribute>().StartDebuff(attributeType, attributeDuration, attributeDamage);
-        }
+        foreach ( Collider other in Physics.OverlapSphere(box.point.position, box.range, box.opponent) )
+            if (other.transform != box.parent)
+                other.GetComponent<StandAttribute>().StartDebuff(attributeType, attributeDuration, attributeDamage);
     }
 
-    public void DrawHitBox()
+    public static void DrawHitBox(HitBox box)
     {
-        Gizmos.color = boxColor;
-        Gizmos.DrawWireSphere(point.position, range);
+        Gizmos.color = box.color;
+        Gizmos.DrawWireSphere(box.point.position, box.range);
     }
 }

@@ -49,6 +49,7 @@ public class SettingsMenu : MonoBehaviour
         Screen.fullScreenMode = FullScreenMode.MaximizedWindow;
         Screen.fullScreen = isFullScreen;
     }
+
     public void SetMinimalist(bool minimal) => Boss_bar.SetActive(minimal);
     
     public void SetSensitivity(float val) => cam.m_YAxis.m_MaxSpeed = val;

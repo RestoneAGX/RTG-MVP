@@ -27,7 +27,7 @@ public static class Hit {
         foreach ( Collider other in Physics.OverlapSphere(box.point.position, box.range, box.opponent) )
         {
             if (other.transform == box.parent) continue;
-            other.GetComponent<Rigidbody>().AddRelativeForce(box.angle, ForceMode.Impulse);
+            other.GetComponent<Rigidbody>().AddForce(box.point.TransformDirection(box.angle), ForceMode.Impulse);
             other.GetComponent<Stats>().TakeDamage(box.damage);
         }
     }
@@ -45,7 +45,7 @@ public static class Hit {
         foreach ( Collider other in Physics.OverlapSphere(box.point.position, box.range, box.opponent) )
         {
             if (other.transform == box.parent || other.transform == transform) continue;
-            other.GetComponent<Rigidbody>().AddRelativeForce(box.angle, ForceMode.Impulse);
+            other.GetComponent<Rigidbody>().AddForce(box.angle, ForceMode.Impulse);
             other.GetComponent<Stats>().TakeDamage(box.damage);
             return true;
         }

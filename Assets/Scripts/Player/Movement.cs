@@ -18,13 +18,13 @@ public sealed class Movement : MonoBehaviour
     [HideInInspector] public PlayerInput input;
     [HideInInspector] public LayerMask ground, plr;
     [HideInInspector] public Rigidbody rb;
-    // Player stats;
+    Player stats;
 
     private void Start()
     {
         rb = GetComponentInChildren<Rigidbody>();
         ani = GetComponentInChildren<Animator>();
-        // stats = GetComponent<Player>();
+        stats = GetComponent<Player>();
 
         ground = LayerMask.GetMask("Ground");
         plr = LayerMask.GetMask("Player");
@@ -38,7 +38,7 @@ public sealed class Movement : MonoBehaviour
     {
         dashCooldown.UpdateTimer();
 
-        // if (stats.stopped || !ani.GetCurrentAnimatorStateInfo(0).IsName("Idle")) return;
+        if (stats.stopped || ani.GetCurrentAnimatorStateInfo(0).IsName("Stun")) return;
 
         float x = input.Movement.Horizontal.ReadValue<float>();
         float y = input.Movement.Vertical.ReadValue<float>();

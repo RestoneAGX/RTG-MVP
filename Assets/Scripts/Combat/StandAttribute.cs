@@ -8,7 +8,7 @@ enum Debuff{
     Tripping
 }
 
-enum Buffs {
+enum Buff {
     Floating,
     Defense,
     Damage,

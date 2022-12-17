@@ -133,17 +133,18 @@ MonoBehaviour:
   damageMultiplier: 1
   stopped: 0
   box:
+    range: 1.56
+    damage: 10
     angle: {x: 0, y: 0, z: 0}
-    boxColor: {r: 0.56410307, g: 1, b: 0.13679248, a: 1}
+    point: {fileID: 7146788248822571198}
+    color: {r: 0, g: 0, b: 0, a: 0}
     opponent:
       serializedVersion: 2
       m_Bits: 64
-    range: 1.56
-    damage: 10
-    point: {fileID: 7146788248822571198}
     parent: {fileID: 0}
   lifeTime: 5
   speed: 2
+  rb: {fileID: 7146788248822571187}
 --- !u!65 &8688964691601336495
 BoxCollider:
   m_ObjectHideFlags: 0

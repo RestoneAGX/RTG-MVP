@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class Disk : Projectile
 {
+    public int diskType;
     public override void Atk() {
-        base.Atk();
-        switch (speed){ // Speed acts as diskType because I don't want 2 GetComponent Calls
-            case 1f: // Mini-TS
-                Hit.Effect(box, 2, 1f);
-                break;
+        if (Hit.Projectile_Atk(box, transform)){
+            if (diskType > -1) Hit.Effect(box, diskType, 1f);
+            else if (diskType == -2)
+                Hit.Atk(box, (Collider hit) => hit.GetComponent<Rigidbody>().AddExplosionForce(box.damage,box.point.position, box.range, 3f, ForceMode.Impulse));
         }
+
     }
 
     public override void Move() {}
 
-    public void Launch(float launch_force, float variant, Transform point, Transform parent){
-         Projectile x = Spawn(point, parent);
-         x.speed = variant;
-         x.rb.AddRelativeForce(Vector3.forward * launch_force, ForceMode.Impulse);
+    public void Launch(float launch_force, int variant, Transform point, Transform parent){
+         Spawn(point, parent, (Projectile a) => {
+             Disk x = (Disk) a;
+             x.diskType = variant;
+             x.rb.AddRelativeForce(Vector3.forward * launch_force, ForceMode.Impulse);
+        });
     }
 }

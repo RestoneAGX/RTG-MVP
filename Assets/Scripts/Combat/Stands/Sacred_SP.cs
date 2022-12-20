@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class Sacred_SP : Standx
 {
-    public HitBox atk;
     public Disk base_disk;
     public float dash_force, disk_force;
-    public Transform point;
 
-    public void Atk() => Hit.Atk(atk);
-
-    public void Disk_Launch(int disk_type) => base_disk.Launch(disk_force, disk_type, point, parent);
+    public void Disk_Launch(int disk_type) => base_disk.Launch(disk_force, disk_type, atk.point, parent);
 
     // public void Side_Atk() => base_disk.Launch(10f, 0, point, parent); // Spawns with 10 force, and as a normal disk
 
@@ -23,11 +19,4 @@ public class Sacred_SP : Standx
 	public void Aerial_Neutral_SpAtk() {}
 	// public override void Aerial_Back_SpAtk() => Hit.Atk(atk); // INHALE AKA inverse knockback
     public override void Ult() {}
-    
-    public override void DrawBoxes() => Hit.DrawHitBox(atk);
-
-    public override void initialize() {
-        base.initialize();
-        atk.parent = parent;
-    }
 }

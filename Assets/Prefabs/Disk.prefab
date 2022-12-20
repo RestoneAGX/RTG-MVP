@@ -146,15 +146,18 @@ MonoBehaviour:
   damageMultiplier: 1
   stopped: 0
   box:
+    square: 0
     range: 0.75
     damage: 1
     angle: {x: 0, y: 3, z: 0}
     point: {fileID: 4151473021994797612}
     color: {r: 1, g: 0.16509432, b: 0.16509432, a: 1}
-    opponent:
+    opps:
       serializedVersion: 2
       m_Bits: 64
     parent: {fileID: 0}
+    buffer: []
+    found_opps: 0
   lifeTime: 5
   speed: 0
   rb: {fileID: 4151473021994797615}

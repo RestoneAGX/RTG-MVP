@@ -3,33 +3,22 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public abstract class Standx : MonoBehaviour
 {
-	internal Transform parent;
-	internal Stats stats;
+	public HitBox atk;
 	public Animator ani;
+	internal Stats stats;
+	internal Transform parent;
+
+	public void Atk() {
+        Hit.SetAsSphere(atk, out atk.found_opps);
+        Hit.Atk(atk);
+    }
+
+    public void BoxAtk() {
+        Hit.SetAsBox(atk, out atk.found_opps);
+        Hit.Atk(atk);
+    }
 	
-	// #region Stand On
-	// public abstract void Neutral_Atk();
-	// public abstract void Forward_Atk();
-	// public abstract void Side_Atk();
-	// public abstract void Back_Atk();
- //
-	// public abstract void Neutral_SpAtk();
-	// public abstract void Forward_SpAtk();
-	// public abstract void Side_SpAtk();
-	// public abstract void Back_SpAtk();
- //
-	// public abstract void Aerial_Neutral_Atk();
-	// public abstract void Aerial_Forward_Atk();
-	// public abstract void Aerial_Side_Atk();
-	// public abstract void Aerial_Back_Atk();
- //
-	// public abstract void Aerial_Neutral_SpAtk();
-	// public abstract void Aerial_Foward_SpAtk();
-	// public abstract void Aerial_Side_SpAtk();
-	// public abstract void Aerial_Back_SpAtk();
- //
 	public abstract void Ult();
-	// #endregion
 
 	public void Pause_Player() => stats.stopped = true;
 	public void Resume_Player() => stats.stopped = false;
@@ -46,9 +35,11 @@ public abstract class Standx : MonoBehaviour
 		// NOTE: Set Player Animator Controller to Preset Stand Ani-Controller for simplicity when working with animations
 		parent = transform.parent;
 		stats = parent.GetComponent<Stats>();
+		atk.buffer = new Collider[25];
+		atk.parent = parent;
 	}
 
-	public abstract void DrawBoxes();
+	public virtual void DrawBoxes() => Hit.DrawHitBox(atk);
 
 	public virtual void ApplyAttributes(){}
 	

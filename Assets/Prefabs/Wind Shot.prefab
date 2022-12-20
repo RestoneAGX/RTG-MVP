@@ -133,15 +133,18 @@ MonoBehaviour:
   damageMultiplier: 1
   stopped: 0
   box:
+    square: 0
     range: 1.56
     damage: 10
     angle: {x: 0, y: 0, z: 0}
     point: {fileID: 7146788248822571198}
-    color: {r: 0, g: 0, b: 0, a: 0}
-    opponent:
+    color: {r: 1, g: 0.28773582, b: 0.28773582, a: 1}
+    opps:
       serializedVersion: 2
       m_Bits: 64
     parent: {fileID: 0}
+    buffer: []
+    found_opps: 0
   lifeTime: 5
   speed: 2
   rb: {fileID: 7146788248822571187}

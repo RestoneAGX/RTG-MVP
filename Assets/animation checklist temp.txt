@@ -1,0 +1,67 @@
+
+Neutral Atk: Punches                                [?]
+Forward Atk: Barrage                                [Have]
+Side Atk: Regular Disc Throw                        [X]
+Back Atk: Cursed Uppercut                           [TEMP]
+
+
+Neutral SpAtk: Mini Time Stop [Projectile]          [X]
+Forward SpAtk: Flame Dash Punch                     [X]
+Side SpAtk: Explosive Disk Throw                    [X]
+Back SpAtk: Call Ancestors                          [X]
+
+
+Neutral Arial Atk: Head Bash  "spike hitboxes"     [Ish]
+Forward Arial Atk: Dash Punch (with low knockback) [Have]
+Side Arial Atk: Spin kick                          [Have]
+Back Arial Atk: Star Breaker                       [Have]
+[Heavy punch with star vfx]
+
+
+
+Neutral Arial SpAtk: Star Kick Jump                [No]
+Forward Arial SpAtk: Flaming Sun Disk              [X]
+Side Arial SpAtk: Star Finger                      [Yes]
+Back Arial SpAtk: Inhale                           [Yes]
+
+
+Ultimate: Time stop and Call Ancestors ( RNG sound effect) but Fr this time
+
+
+Special Properties: Use Any move at any angle when locking on to a target
+
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+
+Neutral Atk: Punches                            [Maybe]
+Forward atk: Barrage                            [X]
+Side atk: Ki beam wave                          [Kind of]
+Back atk: Ki Heavy                              [X]
+
+
+Neutral SpAtk: Time Stop                        [Yes]
+Forward SpAtk: Ki Spin kick                     [Yes]
+Side SpAtk: Ki Armblades                        [Kind of]
+Back SpAtk: Ki Knives                           [Yes]
+
+
+Neutral Arial atk: Ki surrounding you           [Yes?]
+Forward Arial atk: Projectile Ki Explosion      [Maybe]
+Side Arial atk: Arm Blades                      [Kind of]
+Back Arial atk: Ki Ground beam wave             [Kind of]
+
+
+Neutral Arial SpAtk: Spirit bomb & Ki orb       [Yes]
+Forward Arial SpAtk: Awakened                   [Maybe?]
+Side Arial SpAtk: Ki Arm Blades                 [Kind of]
+Back Arial SpAtk: Self Ki Explosion             [Maybe?]
+
+
+Ultimate: Road Roller then Ki Barrage
+
+
+Special Properties:
+

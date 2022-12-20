@@ -2,7 +2,7 @@ using UnityEngine;
 
 public sealed class TheCure : Standx
 {
-    public HitBox atk, wind_box;
+    public HitBox wind_box;
     public Transform firingPoint;
     public Projectile wind_slash;
     public float dashForce, jumpForce, push_force;
@@ -10,7 +10,7 @@ public sealed class TheCure : Standx
 
     public void Windbar_Cost(float cost) => stats.storedDmg -= cost;
 
-    public void Atk() => Hit.Atk(atk); // USE NEGATIVE TO HEAL, USE POSITIVE FOR ATTACK In ANI
+    // public void Atk() => Hit.Atk(atk); // USE NEGATIVE TO HEAL, USE POSITIVE FOR ATTACK In ANI
 
     // public override void Aerial_Neutral_Atk() => Hit.Atk(atk); // NOTE: Maybe add wind particles
 
@@ -51,13 +51,12 @@ public sealed class TheCure : Standx
         base.initialize();
         movement = parent.GetComponent<Movement>();
         wind_box.parent = parent;
-        atk.parent = parent;
         stats.blockType = 1;
 	}
 
     public override void DrawBoxes()
     {
-        Hit.DrawHitBox(atk);
+        base.DrawBoxes();
         Hit.DrawHitBox(wind_box);
     }
 }

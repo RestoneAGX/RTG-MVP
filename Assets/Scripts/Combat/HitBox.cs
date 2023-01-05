@@ -59,17 +59,16 @@ public static class Hit {
     }
 
     public static bool Projectile_Atk(HitBox box, Transform transform) {
-        
+        SetAsSphere(box, out box.found_opps);
         for (int i = 0; i < box.found_opps; i++) 
         {
             if (box.buffer[i].transform == box.parent || box.buffer[i].transform == transform) continue;
-            box.buffer[i].GetComponent<Rigidbody>().AddForce(box.angle, ForceMode.Impulse);
+            box.buffer[i].GetComponent<Rigidbody>().AddForce(box.point.TransformDirection(box.angle), ForceMode.Impulse);
             box.buffer[i].GetComponent<Stats>().TakeDamage(box.damage);
             return true;
         }
         return false;
     }
-
 
     public static void Effect(HitBox box, int AttributeType, float AttributeDuration)
     {

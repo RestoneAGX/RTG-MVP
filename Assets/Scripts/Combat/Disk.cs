@@ -5,11 +5,13 @@ using UnityEngine;
 public class Disk : Projectile
 {
     public int diskType;
+
     public override void Atk() {
         if (Hit.Projectile_Atk(box, transform)){
             if (diskType > -1) Hit.Effect(box, diskType, 1f);
             else if (diskType == -2)
-                Hit.Atk(box, (Collider hit) => hit.GetComponent<Rigidbody>().AddExplosionForce(box.damage,box.point.position, box.range, 3f, ForceMode.Impulse));
+                Hit.Atk(box, (Collider hit) => hit.GetComponent<Rigidbody>().AddExplosionForce(box.damage * 10, box.point.position, box.range, 3f, ForceMode.Impulse));
+            Destroy(gameObject);
         }
 
     }

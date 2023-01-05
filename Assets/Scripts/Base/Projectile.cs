@@ -15,6 +15,7 @@ public class Projectile : Stats
 		Destroy(gameObject, lifeTime);
 
 		rb = GetComponent<Rigidbody>();
+		box.buffer = new Collider[25];
 	}
 	
 	internal virtual void FixedUpdate()

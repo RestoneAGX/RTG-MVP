@@ -23,6 +23,10 @@ public abstract class Standx : MonoBehaviour
 	public void Pause_Player() => stats.stopped = true;
 	public void Resume_Player() => stats.stopped = false;
 
+	public void start_leviatate() => parent.GetComponent<Rigidbody>().useGravity = false;
+	public void stop_levitate() => parent.GetComponent<Rigidbody>().useGravity = true;
+
+
 	public void Spawn(Transform point) => Instantiate(this, point.position, point.rotation, point).initialize();
 
 	public virtual void Despawn(){

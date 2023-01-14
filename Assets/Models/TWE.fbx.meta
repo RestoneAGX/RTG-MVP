@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 639ad0a227b757a5da49d50f1d9b7823
+guid: d289a361b31aa724b9ae84ccdfed98f1
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
@@ -16,6 +16,12 @@ ModelImporter:
       74: -7671899616466574280
     second: world_skeleton|kick_barrage
   - first:
+      74: -1531469688178113666
+    second: world_skeleton|knives
+  - first:
+      74: 846872294504179472
+    second: world_skeleton|sp_idle
+  - first:
       74: 2924870397388378529
     second: world_skeleton|spinkick
   - first:
@@ -24,6 +30,39 @@ ModelImporter:
   - first:
       74: 8776538125994877799
     second: hands_open|kick_barrage
+  - first:
+      74: 335533055595121283
+    second: world_skeleton|Arm slash
+  - first:
+      74: -6440620715973589947
+    second: hands_open|Idle
+  - first:
+      74: 1163645090320401446
+    second: world_skeleton|Ki Ball
+  - first:
+      74: -7472694583376243834
+    second: world_skeleton|sp_grab_idle
+  - first:
+      74: 7874766785676651988
+    second: world_skeleton|sp_grab_start
+  - first:
+      74: 3613238556354498793
+    second: world_skeleton|sp_grab_throw
+  - first:
+      74: 4848029973465881713
+    second: world_skeleton|sp_heavy
+  - first:
+      74: 2526263410057707153
+    second: world_skeleton|sp_standblock
+  - first:
+      74: -8186861570532721436
+    second: world_skeleton|sp_starfinger
+  - first:
+      74: 8134593925789907156
+    second: world_skeleton|sp_succ
+  - first:
+      74: -194302402734602994
+    second: world_skeleton|sp_timestop
   externalObjects: {}
   materials:
     materialImportMode: 2

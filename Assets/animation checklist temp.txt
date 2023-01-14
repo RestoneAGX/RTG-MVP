@@ -38,19 +38,19 @@ Special Properties: Use Any move at any angle when locking on to a target
 
 Neutral Atk: Punches                            [Maybe]
 Forward atk: Barrage                            [X]
-Side atk: Ki beam wave                          [Kind of]
+Side atk: Ki Armblades                          [Kind of]
 Back atk: Ki Heavy                              [X]
 
 
-Neutral SpAtk: Time Stop                        [Yes]
-Forward SpAtk: Ki Spin kick                     [Yes]
-Side SpAtk: Ki Armblades                        [Kind of]
-Back SpAtk: Ki Knives                           [Yes]
+Neutral SpAtk: Time Stop                        [X]
+Forward SpAtk: Ki Spin kick                     [X]
+Side SpAtk: Ki beam wave                        [X?]
+Back SpAtk: Ki Knives                           [X]
 
 
-Neutral Arial atk: Ki surrounding you           [Yes?]
-Forward Arial atk: Projectile Ki Explosion      [Maybe]
-Side Arial atk: Arm Blades                      [Kind of]
+Neutral Arial atk: Ki surrounding you           [X]
+Forward Arial atk:  Arm Blades                  [Kind of]
+Side Arial atk: Projectile Ki Explosion         [X?]
 Back Arial atk: Ki Ground beam wave             [Kind of]
 
 

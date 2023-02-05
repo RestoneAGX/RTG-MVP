@@ -40,3 +40,8 @@ public sealed class Timer
 		m_CurrentTime = 0;
 	}
 }
+
+public class Killplane : MonoBehaviour
+{
+    private void OnTriggerEnter(Collider other) => other.GetComponent<Stats>().Die();
+}
